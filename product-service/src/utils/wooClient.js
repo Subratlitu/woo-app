@@ -23,7 +23,7 @@ export const fetchWooProducts = async () => {
 
     return response.data;
   } catch (error) {
-    console.error("❌ Error fetching products from WooCommerce:", error.message);
+    console.error(" Error fetching products from WooCommerce:", error.message);
     throw error;
   }
 };

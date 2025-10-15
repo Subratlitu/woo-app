@@ -44,7 +44,7 @@ export const getAllProducts = async (req, res) => {
       products
     });
   } catch (error) {
-    console.error("❌ Error fetching products from DB:", error.message);
+    console.error(" Error fetching products from DB:", error.message);
     res.status(500).json({ message: "Failed to fetch products", error: error.message });
   }
 };

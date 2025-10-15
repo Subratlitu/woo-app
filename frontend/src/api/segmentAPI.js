@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const SEGMENT_SERVICE_URL = "http://localhost:5000/api/segments/evaluate";
+const SEGMENT_SERVICE_URL = import.meta.env.VITE_SEGMENT_SERVICE_URL;
 
 export const evaluateSegment = async (rulesText, page = 1, limit = 10) => {
   try {
