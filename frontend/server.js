@@ -8,14 +8,14 @@ const __dirname = path.dirname(__filename);
 
 const port = process.env.PORT || 8080;
 
-// Serve static files from the dist directory
+// Serve static files
 app.use(express.static(path.join(__dirname, "dist")));
 
-// Handle all routes -> index.html
-app.get("*", (_, res) => {
+// Handle SPA routes correctly
+app.get("/*", (_, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(` Server running on port ${port}`);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`✅ Server running on port ${port}`);
 });
