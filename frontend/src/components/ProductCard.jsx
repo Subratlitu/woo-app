@@ -5,25 +5,34 @@ const ProductCard = ({ product }) => {
   return (
     <div className="product-card">
       <h3>{product.title || "No title"}</h3>
-      <p>Price: <span>₹{product.price != null ? product.price : "N/A"}</span></p>
-      <p>Stock: <span>{product.stock_status || "N/A"}</span></p>
-      <p>Category: <span>{product.category || "N/A"}</span></p>
-      <p>On Sale: <span>{product.on_sale ? "Yes" : "No"}</span></p>
+      <p>
+        Price: <span>₹{product.price != null ? product.price : "N/A"}</span>
+      </p>
+      <p>
+        Stock: <span>{product.stock_status || "N/A"}</span>
+      </p>
+      <p>
+        Category: <span>{product.category || "N/A"}</span>
+      </p>
+      <p>
+        On Sale: <span>{product.on_sale ? "Yes" : "No"}</span>
+      </p>
+
       {product.tags && product.tags.length > 0 && (
         <div className="tags">
           {product.tags.map((tag, i) => (
-            <span key={i} className="tag">{tag}</span>
+            <span key={i} className="tag">
+              {tag}
+            </span>
           ))}
         </div>
       )}
-      <pre>
-        _id: {product._id}, id: {product.id}
-      </pre>
     </div>
   );
 };
 
 export default ProductCard;
+
 // import React from "react";
 // import "./ProductCard.css";
 
